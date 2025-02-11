@@ -4,8 +4,8 @@
  */
 var clearDigits = function(s) {
     let flag = 0;
-    let sLen = s.length;
     let sArray = s.split('');
+    let sLen = sArray.length;
     while(!flag){
         for(let i=0; i<sLen; i++){
             
