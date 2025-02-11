@@ -18,6 +18,7 @@ var clearDigits = function(s) {
                 break;
             }
             if(i==sLen-1){
+                console.log(i,sArray[i]);
                 flag=1;
             }   
              
