@@ -9,9 +9,7 @@ var removeOccurrences = function(s, part) {
 
     while(!flag){
         if(s.includes(part)){
-            console.log(s);
             s=s.replace(part,'');
-            console.log(s);
         }else{
             flag = 1;
         }
