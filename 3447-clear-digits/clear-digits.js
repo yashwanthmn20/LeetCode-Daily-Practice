@@ -16,11 +16,11 @@ var clearDigits = function(s) {
             if(sArray[i]>=0 && sArray[i]<=9){
                 sArray.splice(i,1);
                 currIndex = i-1;
-                sLen-=1;
+                sLen--;
                 if(i!=0){
                     sArray.splice(i-1,1);
                     currIndex = i-2;
-                    sLen-=1;
+                    sLen--;
                 }
                 break;
             }
