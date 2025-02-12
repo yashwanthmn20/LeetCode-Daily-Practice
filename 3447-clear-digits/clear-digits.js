@@ -7,15 +7,18 @@ var clearDigits = function(s) {
     let sArray = s.split('');
     let sLen = sArray.length;
     let sLen1 = 0;
+    let currIndex = 0;
     while(!flag){
         if(sArray.length==0){
             break;
         }
-        for(let i=0; i<sArray.length; i++){
+        for(let i=currIndex; i<sArray.length; i++){
             if(sArray[i]>=0 && sArray[i]<=9){
                 sArray.splice(i,1);
+                currIndex = i-1;
                 if(i!=0){
                     sArray.splice(i-1,1);
+                    currIndex = i-2;
                 }
                 break;
             }
