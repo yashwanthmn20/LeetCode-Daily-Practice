@@ -3,7 +3,7 @@
  * @return {number}
  */
 var maximumSum = function(nums) {
-    // nums.sort((a, b) => b - a);
+    nums.sort((a, b) => b - a);
     console.log(nums);
     
     const hashFunc = new Map();
@@ -24,19 +24,15 @@ var maximumSum = function(nums) {
         console.log(sum);
 
         if((hashFunc.has(sum))){
+            console.log(nums[i],(hashFunc.get(sum)));
             answer = Math.max(answer,(nums[i])+(hashFunc.get(sum)));
-            if(nums[i]>(hashFunc.get(sum))){
-                hashFunc.set(sum,nums[i]);
-            }
             flag = 1;
         }
-        // if(answer > (nums[0]+nums[i])){
-        //         return answer;
-        //     }
-        else{
-            hashFunc.set(sum,nums[i]);
-        }
-        
+        if(answer > (nums[0]+nums[i])){
+                return answer;
+            }
+
+        hashFunc.set(sum,nums[i]);
     }
     
     if(flag==1){
