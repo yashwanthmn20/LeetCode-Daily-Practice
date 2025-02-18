@@ -21,8 +21,6 @@ var smallestNumber = function(pattern) {
             // }
             myArr.push(...temp.reverse());
             temp = [];
-        }else{
-            console.log("Pushing to Stack",[i]);
         }
     }
 
