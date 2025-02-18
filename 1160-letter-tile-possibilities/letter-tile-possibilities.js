@@ -22,7 +22,6 @@ var numTilePossibilities = function(tiles) {
 
         function backtrack(path, remaining) {
         if (path.length > 0) {
-            // Use regex to validate and store sequences
             if (/^[A-Z]+$/.test(path)) {
                 tileSetUnique.add(path);
             }
@@ -33,7 +32,6 @@ var numTilePossibilities = function(tiles) {
         }
     }
 
-    // Start backtracking with an empty path
     backtrack("", tiles);
 
     return tileSetUnique.size;
