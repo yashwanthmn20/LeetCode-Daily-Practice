@@ -16,17 +16,20 @@ var smallestNumber = function(pattern) {
         counter++;
         temp.push(counter);
         if(pattern[i]=="I"){
-            while (temp.length > 0) {
-                myArr.push(temp.pop());   
-            }
+            // while (temp.length > 0) {
+            //     myArr.push(temp.pop());   
+            // }
+            myArr.push(...temp.reverse());
+            temp = [];
         }else{
             console.log("Pushing to Stack",[i]);
         }
     }
 
-    while (temp.length > 0) {
-                myArr.push(temp.pop());   
-            }
+    // while (temp.length > 0) {
+    //             myArr.push(temp.pop());   
+    //         }
+    myArr.push(...temp.reverse());
     return(myArr.join(''));
 
 
