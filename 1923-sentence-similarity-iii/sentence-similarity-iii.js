@@ -19,12 +19,12 @@ var areSentencesSimilar = function(sentence1, sentence2) {
         let counter = 0;
         let minLen = Math.min(s1Len, s2Len);
 
-        while (i < minLen && s1Split[i] === s2Split[i]) {
+        while (i < minLen && s1Split[i] == s2Split[i]) {
             i++;
             counter++;
         }
 
-        while (j < minLen - i && s1Split[s1Len - 1 - j] === s2Split[s2Len - 1- j]) {
+        while (j < minLen - i && s1Split[s1Len - 1 - j] == s2Split[s2Len - 1- j]) {
             j++;
             counter++;
         }
