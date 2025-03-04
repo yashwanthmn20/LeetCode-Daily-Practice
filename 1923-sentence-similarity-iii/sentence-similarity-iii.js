@@ -10,38 +10,22 @@ var areSentencesSimilar = function(sentence1, sentence2) {
     let s1Len = s1Split.length;
     let s2Len = s2Split.length;
     
-    let counter = 0 ;
+    if (sentence1 === sentence2){
+        return true; 
+    }else{
+    
+        let i = 0
+        let j = 0;
+        let minLen = Math.min(s1Len, s2Len);
 
-    let loopLen = (s1Len>s2Len)?s2Len:s1Len;
-
-    if(sentence1==sentence2){
-            return true;
-    }else if(s1Split[0]==s2Split[0] || s1Split[s1Len-1]==s2Split[s2Len-1]){
-        //from start
-        for(let i=0 ; i<loopLen ; i++){
-                if(s1Split[i]==s2Split[i]){
-                    counter++;
-                    matched = true;
-                }else{
-                    break;
-                }
-            }
-
-        //from end
-        for(let i=1; i<=loopLen; i++){
-            //console.log(s1Split[s1Len-i],s2Split[s2Len-i],loopLen,i)
-            if(s1Split[s1Len-i]==s2Split[s2Len-i]){
-                    counter++;
-                    matched = true;
-                }else{
-                    break;
-                }
+        while (i < minLen && s1Split[i] === s2Split[i]) {
+            i++;
         }
 
-        //final solution
-        matched = (counter>=loopLen)?true:false;
-        return matched;
-    }else{
-        return false;
+        while (j < minLen - i && s1Split[s1Len - 1 - j] === s2Split[s2Len - 1 - j]) {
+            j++;
+        }
+
+        return i + j >= minLen?true:false; 
     }
 };
