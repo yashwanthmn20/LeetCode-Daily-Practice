@@ -6,9 +6,12 @@
 var closestPrimes = function(left, right) {
     
     let primes = sievePrime(right);
+
     let primeList = [];
+
     let minVal = Infinity;
     let minPrimeList = [];
+    
     for(let i = left ; i<=right ; i++){
         if(primes[i]){
             primeList.push(i);
@@ -21,7 +24,6 @@ var closestPrimes = function(left, right) {
         if(minVal>dup){
             minVal = dup;
             minPrimeList = [primeList[i],primeList[i+1]];
-            console.log(minPrimeList);
         }
     }
     if(minVal==Infinity){
@@ -34,7 +36,7 @@ function sievePrime(n){
         let primes = new Array(n+1).fill(true);
         primes[0]=primes[1]=false;
 
-        for(let i=2; i <=n; i++ ){
+        for(let i=2; i * i  <=n; i++ ){
             if(primes[i]){
                 for(j=i*i ; j<=n ; j+=i){
                     primes[j]=false;
